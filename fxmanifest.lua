@@ -8,7 +8,6 @@ version '2.0'
 client_scripts {
     'client/*.lua',
     'client/Datastore/*.lua',
-    'client/Functions/*.lua'
 }
 
 shared_scripts {
@@ -17,5 +16,4 @@ shared_scripts {
 
 server_scripts {
     'server/*.lua',
-    'server/Functions/*.lua'
 }
