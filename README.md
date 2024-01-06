@@ -5,7 +5,7 @@ add to your server configuration:
 
 ensure Cx-RealSync-Reborn
 
-then make sure you add an API key to the TimeWeatherConfig.lua in the server folder and stop all other weather sync / time sync scripts eg. Vsync or vMenu etc.
+then make sure you add an API key to the Config.lua in the server folder and stop all other weather sync / time sync scripts eg. Vsync or vMenu etc.
 
 <a href='https://forum.cfx.re/t/release-free-cx-realsync/3683837'>https://forum.cfx.re/t/release-free-cx-realsync/3683837</a> 
 
