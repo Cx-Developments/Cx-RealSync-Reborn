@@ -2,7 +2,6 @@ local apiString = "http://api.weatherapi.com/v1/current.json?key=" .. TimeWeathe
 
 function QueryWeather()
     PerformHttpRequest(apiString, function (errorCode, resultData, resultHeaders)
-        _source = source or -1
         if errorCode == 200 then
             local decodedData = json.decode(resultData)
             if decodedData and decodedData.current then
@@ -23,7 +22,7 @@ function QueryWeather()
                     CurrentTime = TimeEpochConversion(decodedData.location.localtime_epoch),
                     UseLocalTime = TimeWeatherConfiguration.UseLocalTime
                 }
-                TriggerClientEvent("Cx-RealSync:RetriveData", _source, TimeWeatherArray)
+                TriggerClientEvent("Cx-RealSync:RetriveData", -1, TimeWeatherArray)
             else
                 print("Error: Invalid or incomplete weather data")
             end
