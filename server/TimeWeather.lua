@@ -5,10 +5,21 @@ function QueryWeather()
         if errorCode == 200 then
             local decodedData = json.decode(resultData)
             if decodedData and decodedData.current then
-                local TimeWeatherArray = {
-                    WeatherType = decodedData.current.condition.code,
+                local TimeWeatherArray = { 
+                --[[ Definitions
+                    WindSpeed, The wind speed recorded.
+                    WindDirection, The wind direction recorded (North, East, West, South).
+                    WeatherType, Weather Code interger used for interpretation on client to find specific weather data.
+                    Rain, Decyphered on client using the Weather Code Integer to find the rain amount.
+                    LastWeather, Stores last used weather type definition.
+                    CurrentTime, Current time in the city found using the real life Epoch time interger.
+                    UseLocalTime, Defines whether or not to disable realistic time and to use GTA time.
+                ]]
                     WindSpeed = decodedData.current.wind_mph,
-                    WindDirection = decodedData.current.wind_degree
+                    WindDirection = decodedData.current.wind_degree,
+                    WeatherType = decodedData.current.condition.code,
+                    CurrentTime = TimeEpochConversion(decodedData.location.localtime_epoch),
+                    UseLocalTime = TimeWeatherConfiguration.UseLocalTime
                 }
                 TriggerClientEvent("Cx-RealSync:RetriveData", -1, TimeWeatherArray)
             else
