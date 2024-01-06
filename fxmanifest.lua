@@ -11,7 +11,7 @@ client_scripts {
 }
 
 shared_scripts {
-    'shared/Datastore/*.lua',
+    'shared/datastore/*.lua',
     'shared/Functions/*.lua'
 }
 
