@@ -7,10 +7,11 @@ version '2.0'
 
 client_scripts {
     'client/*.lua',
-    'client/Datastore/*.lua',
+    
 }
 
 shared_scripts {
+    'shared/Datastore/*.lua',
     'shared/Functions/*.lua'
 }
 

@@ -10,7 +10,7 @@ CreateThread(function()
 				Tickcount = Tick+1500
 			end
 		end
-		NetworkOverrideClockTime(TimeWeatherArray.CurrentTime.Hour, TimeWeatherArray.CurrentTime.Minute, TimeWeatherArray.CurrentTime.Second)
+		NetworkOverrideClockTime(tonumber(TimeWeatherArray.CurrentTime.Hour), tonumber(TimeWeatherArray.CurrentTime.Minute), tonumber(TimeWeatherArray.CurrentTime.Second))
 	end
 end)
 

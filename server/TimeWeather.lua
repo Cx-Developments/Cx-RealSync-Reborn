@@ -17,7 +17,8 @@ function QueryWeather()
                 ]]
                     WindSpeed = decodedData.current.wind_mph,
                     WindDirection = decodedData.current.wind_degree,
-                    WeatherType = decodedData.current.condition.code,
+                    WeatherType = Datastore.WeatherDefinitions[tonumber(decodedData.current.condition.code)].WeatherType,
+                    Rain = Datastore.WeatherDefinitions[tonumber(decodedData.current.condition.code)].WeatherRainAmount,
                     CurrentTime = TimeEpochConversion(decodedData.location.localtime_epoch),
                     UseLocalTime = TimeWeatherConfiguration.UseLocalTime
                 }
