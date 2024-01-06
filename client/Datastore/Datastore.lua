@@ -1,0 +1,1 @@
+Datastore = {} -- Defines Global Datastore
