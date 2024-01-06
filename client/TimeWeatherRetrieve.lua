@@ -9,3 +9,7 @@ function RetriveData(Data)
 end
 
 RegisterNetEvent("Cx-RealSync:RetriveData", RetriveData)
+
+RegisterNetEvent('playerSpawned', function()
+    TriggerServerEvent("Cx-RealSync:RetriveData")
+end)
