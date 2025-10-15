@@ -1,0 +1,13 @@
+local weatherActive = true
+
+RegisterNetEvent("Cx-RealSync:stopWeather", function()
+    weatherActive = false
+end)
+
+RegisterNetEvent("Cx-RealSync:startWeather", function()
+    weatherActive = true
+end)
+
+function isWeatherActive()
+    return weatherActive
+end
