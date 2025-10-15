@@ -7,4 +7,5 @@ TimeWeatherArray = {
     LastWeather = "OVERCAST",
     CurrentTime = {Hour = 12, Minute = 0, Second = 0},
     UseLocalTime = false,
+    IsInside = false -- New variable
 }

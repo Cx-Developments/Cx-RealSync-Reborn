@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app" v-show="isVisible">
+        <div id="weather-container">
+            <h1>Admin Weather Control</h1>
+            <p>Status: <span :style="{ color: statusColor }">{{ statusText }}</span></p>
+
+            <input type="text" v-model="weatherType" placeholder="Weather Type (e.g., CLEAR)">
+            <button @click="setWeather">Set Weather</button>
+            <br>
+            <input type="number" v-model.number="rainLevel" placeholder="Rain Level (0.0 - 1.0)" step="0.1">
+            <button @click="setRain">Set Rain</button>
+            <br>
+            <input type="number" v-model.number="windSpeed" placeholder="Wind Speed">
+            <input type="number" v-model.number="windDirection" placeholder="Wind Direction">
+            <button @click="setWind">Set Wind</button>
+            <br>
+            <button @click="clearOverride" v-if="overrideStatus">Back to Automatic</button>
+            <button @click="closeNui">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
